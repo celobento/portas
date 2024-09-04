@@ -5,10 +5,11 @@ import { useEffect, useState } from "react";
 import { atualizarPortas, criarPortas } from "@/functions/portas";
 import Link from "next/link";
 import {usePathname, useSearchParams, useParams  } from "next/navigation";
+import PortaModel from "@/model/porta";
 
-export default function jogo() {
+export default function Jogo() {
     const [valido, setValido] = useState(false)
-    const [portas, setPortas] = useState([])
+    const [portas, setPortas] = useState<PortaModel[]>([])
     const params = useParams<{ portas: string; temPresente: string }>()
 
     useEffect(() => {
